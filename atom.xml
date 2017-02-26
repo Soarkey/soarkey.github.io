@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Soarkey的博客</title>
-  <subtitle>致虚极，守静笃  Stay hungry. Stay foolish.</subtitle>
+  <subtitle>Stay hungry. Stay foolish.  致虚极，守静笃  </subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://soarkey.github.io/"/>
