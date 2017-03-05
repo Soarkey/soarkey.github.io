@@ -35,7 +35,7 @@ Cookie(java.lang.String name, java.lang.String value)
 void setPath(java.lang.String uri)       设置有效访问途径
 
 有效路径指的是c">
-<meta property="og:updated_time" content="2017-03-05T06:02:19.418Z">
+<meta property="og:updated_time" content="2017-03-05T06:04:38.987Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Cookie技术的介绍">
 <meta name="twitter:description" content="一、会话技术分类cookie技术：会话数据保存在浏览器客户端session技术：会话数据保存在服务器端
@@ -157,7 +157,7 @@ void setPath(java.lang.String uri)       设置有效访问途径
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、会话技术分类"><span class="toc-text">一、会话技术分类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、cookie使用步骤"><span class="toc-text">二、cookie使用步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-构造Cookie"><span class="toc-text">1.构造Cookie</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-设置Cookie"><span class="toc-text">2.设置Cookie</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-发送Cookie到浏览器保存"><span class="toc-text">3.发送Cookie到浏览器保存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-服务器接收Cookie"><span class="toc-text">4.服务器接收Cookie</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、Cookie的局限："><span class="toc-text">三、Cookie的局限：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Cookie只能存储字符串类型，不能保存对象"><span class="toc-text">1.Cookie只能存储字符串类型，不能保存对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-只能存储非中文数据"><span class="toc-text">2.只能存储非中文数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-nbsp-1个Cookie的容量不超过4KB"><span class="toc-text">3. 1个Cookie的容量不超过4KB</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、Cookie常见错误"><span class="toc-text">四、Cookie常见错误</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-数据类型错误"><span class="toc-text">1.数据类型错误</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、会话技术分类"><span class="toc-text">一、会话技术分类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、cookie使用步骤"><span class="toc-text">二、cookie使用步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-构造Cookie"><span class="toc-text">1.构造Cookie</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-设置Cookie"><span class="toc-text">2.设置Cookie</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-发送Cookie到浏览器保存"><span class="toc-text">3.发送Cookie到浏览器保存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-服务器接收Cookie"><span class="toc-text">4.服务器接收Cookie</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、Cookie的局限："><span class="toc-text">三、Cookie的局限：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、Cookie常见错误"><span class="toc-text">四、Cookie常见错误</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-数据类型错误"><span class="toc-text">1.数据类型错误</span></a></li></ol></li></ol>
   </div>
 
 
@@ -241,7 +241,10 @@ void setPath(java.lang.String uri)       设置有效访问途径
 <h2 id="4-服务器接收Cookie"><a href="#4-服务器接收Cookie" class="headerlink" title="4.服务器接收Cookie"></a>4.服务器接收Cookie</h2><ul>
 <li>Cookie[] request.getCookies                接收Cookie</li>
 </ul>
-<h1 id="三、Cookie的局限："><a href="#三、Cookie的局限：" class="headerlink" title="三、Cookie的局限："></a>三、Cookie的局限：</h1><h2 id="1-Cookie只能存储字符串类型，不能保存对象"><a href="#1-Cookie只能存储字符串类型，不能保存对象" class="headerlink" title="1.Cookie只能存储字符串类型，不能保存对象"></a>1.Cookie只能存储字符串类型，不能保存对象</h2><h2 id="2-只能存储非中文数据"><a href="#2-只能存储非中文数据" class="headerlink" title="2.只能存储非中文数据"></a>2.只能存储非中文数据</h2><h2 id="3-nbsp-1个Cookie的容量不超过4KB"><a href="#3-nbsp-1个Cookie的容量不超过4KB" class="headerlink" title="3.&nbsp;1个Cookie的容量不超过4KB"></a>3.&nbsp;1个Cookie的容量不超过4KB</h2><blockquote>
+<h1 id="三、Cookie的局限："><a href="#三、Cookie的局限：" class="headerlink" title="三、Cookie的局限："></a>三、Cookie的局限：</h1><p>1.Cookie只能存储字符串类型，不能保存对象</p>
+<p>2.只能存储非中文数据</p>
+<p>3.&nbsp;1个Cookie的容量不超过4KB</p>
+<blockquote>
 <p>如果要保存非字符串数据，超过4kb内容，只能使用session技术！</p>
 </blockquote>
 <h1 id="四、Cookie常见错误"><a href="#四、Cookie常见错误" class="headerlink" title="四、Cookie常见错误"></a>四、Cookie常见错误</h1><h2 id="1-数据类型错误"><a href="#1-数据类型错误" class="headerlink" title="1.数据类型错误"></a>1.数据类型错误</h2><blockquote>

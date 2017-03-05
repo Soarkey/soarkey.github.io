@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://soarkey.github.io/"/>
-  <updated>2017-03-05T06:02:19.418Z</updated>
+  <updated>2017-03-05T06:04:38.987Z</updated>
   <id>https://soarkey.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://soarkey.github.io/2017/03/05/%E5%85%B3%E4%BA%8Ecookie%E7%9A%84%E4%BB%8B%E7%BB%8D/"/>
     <id>https://soarkey.github.io/2017/03/05/关于cookie的介绍/</id>
     <published>2017-03-05T00:00:00.000Z</published>
-    <updated>2017-03-05T06:02:19.418Z</updated>
+    <updated>2017-03-05T06:04:38.987Z</updated>
     
     <content type="html"><![CDATA[<h1 id="一、会话技术分类"><a href="#一、会话技术分类" class="headerlink" title="一、会话技术分类"></a>一、会话技术分类</h1><p>cookie技术：会话数据保存在浏览器客户端<br>session技术：会话数据保存在服务器端</p>
 <h1 id="二、cookie使用步骤"><a href="#二、cookie使用步骤" class="headerlink" title="二、cookie使用步骤"></a>二、cookie使用步骤</h1><h2 id="1-构造Cookie"><a href="#1-构造Cookie" class="headerlink" title="1.构造Cookie"></a>1.构造Cookie</h2><ul>
@@ -55,7 +55,10 @@
 <h2 id="4-服务器接收Cookie"><a href="#4-服务器接收Cookie" class="headerlink" title="4.服务器接收Cookie"></a>4.服务器接收Cookie</h2><ul>
 <li>Cookie[] request.getCookies                接收Cookie</li>
 </ul>
-<h1 id="三、Cookie的局限："><a href="#三、Cookie的局限：" class="headerlink" title="三、Cookie的局限："></a>三、Cookie的局限：</h1><h2 id="1-Cookie只能存储字符串类型，不能保存对象"><a href="#1-Cookie只能存储字符串类型，不能保存对象" class="headerlink" title="1.Cookie只能存储字符串类型，不能保存对象"></a>1.Cookie只能存储字符串类型，不能保存对象</h2><h2 id="2-只能存储非中文数据"><a href="#2-只能存储非中文数据" class="headerlink" title="2.只能存储非中文数据"></a>2.只能存储非中文数据</h2><h2 id="3-nbsp-1个Cookie的容量不超过4KB"><a href="#3-nbsp-1个Cookie的容量不超过4KB" class="headerlink" title="3.&nbsp;1个Cookie的容量不超过4KB"></a>3.&nbsp;1个Cookie的容量不超过4KB</h2><blockquote>
+<h1 id="三、Cookie的局限："><a href="#三、Cookie的局限：" class="headerlink" title="三、Cookie的局限："></a>三、Cookie的局限：</h1><p>1.Cookie只能存储字符串类型，不能保存对象</p>
+<p>2.只能存储非中文数据</p>
+<p>3.&nbsp;1个Cookie的容量不超过4KB</p>
+<blockquote>
 <p>如果要保存非字符串数据，超过4kb内容，只能使用session技术！</p>
 </blockquote>
 <h1 id="四、Cookie常见错误"><a href="#四、Cookie常见错误" class="headerlink" title="四、Cookie常见错误"></a>四、Cookie常见错误</h1><h2 id="1-数据类型错误"><a href="#1-数据类型错误" class="headerlink" title="1.数据类型错误"></a>1.数据类型错误</h2><blockquote>
