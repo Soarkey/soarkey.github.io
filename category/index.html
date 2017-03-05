@@ -5,7 +5,7 @@
 
 
 <head>
-  <meta charset="utf-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
   <title>category | Soarkey的博客</title>
 
@@ -36,7 +36,7 @@
 
 
   
-    <link rel="stylesheet" href="/css/personal-style.css">
+    <link rel="stylesheet" href="/css/soarkey-style.css">
   
 
   
@@ -51,7 +51,7 @@
   
 
   
-    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 </head>
 
@@ -59,7 +59,7 @@
 
 
   
-    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><span id="toolbox-mobile" class="toolbox-mobile">索引</span>
   
 
   <div class="content content-category">
@@ -75,7 +75,7 @@
   
   <div class="toolbox">
     <a class="toolbox-entry" href="/">
-      <span class="toolbox-entry-text">盒子</span>
+      <span class="toolbox-entry-text">索引</span>
       <i class="icon-angle-down"></i>
       <i class="icon-home"></i>
     </a>
@@ -133,28 +133,6 @@
             target="_self"
             >
             关于
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/atom.xml"
-            rel="noopener noreferrer"
-            target="_blank"
-            >
-            RSS
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/search/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            搜索
           </a>
         </li>
       
@@ -356,28 +334,6 @@
             </a>
           </li>
         
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/atom.xml"
-              rel="noopener noreferrer"
-              target="_blank"
-              >
-              RSS
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/search/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              搜索
-            </a>
-          </li>
-        
       </ul>
 
     </div>
@@ -416,22 +372,7 @@
       // load success
     });
   }
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
