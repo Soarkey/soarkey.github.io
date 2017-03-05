@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://soarkey.github.io/"/>
-  <updated>2017-03-05T05:47:12.549Z</updated>
+  <updated>2017-03-05T06:02:19.418Z</updated>
   <id>https://soarkey.github.io/</id>
   
   <author>
@@ -20,63 +20,54 @@
     <link href="https://soarkey.github.io/2017/03/05/%E5%85%B3%E4%BA%8Ecookie%E7%9A%84%E4%BB%8B%E7%BB%8D/"/>
     <id>https://soarkey.github.io/2017/03/05/关于cookie的介绍/</id>
     <published>2017-03-05T00:00:00.000Z</published>
-    <updated>2017-03-05T05:47:12.549Z</updated>
+    <updated>2017-03-05T06:02:19.418Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="会话技术分类"><a href="#会话技术分类" class="headerlink" title="会话技术分类"></a>会话技术分类</h1><p>cookie技术：会话数据保存在浏览器客户端<br>session技术：会话数据保存在服务器端</p>
-<h1 id="cookie使用步骤"><a href="#cookie使用步骤" class="headerlink" title="cookie使用步骤"></a>cookie使用步骤</h1><p>一、构造Cookie</p>
-<ul>
+    <content type="html"><![CDATA[<h1 id="一、会话技术分类"><a href="#一、会话技术分类" class="headerlink" title="一、会话技术分类"></a>一、会话技术分类</h1><p>cookie技术：会话数据保存在浏览器客户端<br>session技术：会话数据保存在服务器端</p>
+<h1 id="二、cookie使用步骤"><a href="#二、cookie使用步骤" class="headerlink" title="二、cookie使用步骤"></a>二、cookie使用步骤</h1><h2 id="1-构造Cookie"><a href="#1-构造Cookie" class="headerlink" title="1.构造Cookie"></a>1.构造Cookie</h2><ul>
 <li>Cookie(java.lang.String name, java.lang.String value)</li>
 </ul>
-<p>二、设置Cookie</p>
-<ul>
+<h2 id="2-设置Cookie"><a href="#2-设置Cookie" class="headerlink" title="2.设置Cookie"></a>2.设置Cookie</h2><ul>
 <li><p>void setPath(java.lang.String uri)       设置有效访问途径</p>
-<pre><code>有效路径指的是cookie的有效路径保存位置，浏览器在有效路径下访问服务器时就会带着cookie信息，否则不带cookie信息。
-</code></pre></li>
+<blockquote>
+<p>有效路径指的是cookie的有效路径保存位置，浏览器在有效路径下访问服务器时就会带着cookie信息，否则不带cookie信息。</p>
+</blockquote>
+</li>
 <li><p>void setMaxAge(int expiry)               设置Cookie有效时间,单位为秒</p>
-</li>
-</ul>
-<pre><code>**注意细节：**&lt;br&gt;
-正整数：保存时间长度（1\*30\*24\*60\*60）&lt;br&gt;
-负整数：实现会话cookie, cookie保存在浏览器内存，随着浏览器的关闭而清除&lt;br&gt;
-    例如：`cookie.setMaxAge(-1)`
-零：删除同名的cookie
-</code></pre><ul>
-<li><p>void setValue(java.lang.String newValue)   设置Cookie的值  </p>
-<p>  <strong>注意细节</strong><br><br>  Cookie数据类型只能保存非中文字符串类型的。<br><br>  浏览器一般只允许存放300个Cookie，每个站点最多存放20个Cookie，每个Cookie的大小限制为4KB</p>
-</li>
-</ul>
-<p>三、发送Cookie到浏览器保存</p>
+<blockquote>
+<p><strong>注意细节：</strong><br><br>正整数：保存时间长度（1*30*24*60*60)</p>
+<p>负整数：实现会话cookie, cookie保存在浏览器内存，随着浏览器的关闭而清除</p>
 <ul>
+<li>例如:cookie.setMaxAge(-1)</li>
+</ul>
+<p>零：删除同名的cookie</p>
+</blockquote>
+</li>
+<li><p>void setValue(java.lang.String newValue)   设置Cookie的值  </p>
+<blockquote>
+<p><strong>注意细节</strong></p>
+<p>Cookie数据类型只能保存非中文字符串类型的。浏览器一般只允许存放300个Cookie，每个站点最多存放20个Cookie，每个Cookie的大小限制为4KB</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="3-发送Cookie到浏览器保存"><a href="#3-发送Cookie到浏览器保存" class="headerlink" title="3.发送Cookie到浏览器保存"></a>3.发送Cookie到浏览器保存</h2><ul>
 <li>void addCookie(Cookie cookie)           发送Cookie给浏览器</li>
 </ul>
-<p>四、服务器接收Cookie</p>
-<ul>
+<h2 id="4-服务器接收Cookie"><a href="#4-服务器接收Cookie" class="headerlink" title="4.服务器接收Cookie"></a>4.服务器接收Cookie</h2><ul>
 <li>Cookie[] request.getCookies                接收Cookie</li>
 </ul>
-<h1 id="Cookie的局限："><a href="#Cookie的局限：" class="headerlink" title="Cookie的局限："></a>Cookie的局限：</h1><p>1.Cookie只能存储字符串类型，不能保存对象</p>
-<p>2.只能存储非中文数据</p>
-<p>3.&nbsp;1个Cookie的容量不超过4KB</p>
-<blockquote>
-<p>如果要保存非字符串，超过4kb内容，只能使用session技术！</p>
+<h1 id="三、Cookie的局限："><a href="#三、Cookie的局限：" class="headerlink" title="三、Cookie的局限："></a>三、Cookie的局限：</h1><h2 id="1-Cookie只能存储字符串类型，不能保存对象"><a href="#1-Cookie只能存储字符串类型，不能保存对象" class="headerlink" title="1.Cookie只能存储字符串类型，不能保存对象"></a>1.Cookie只能存储字符串类型，不能保存对象</h2><h2 id="2-只能存储非中文数据"><a href="#2-只能存储非中文数据" class="headerlink" title="2.只能存储非中文数据"></a>2.只能存储非中文数据</h2><h2 id="3-nbsp-1个Cookie的容量不超过4KB"><a href="#3-nbsp-1个Cookie的容量不超过4KB" class="headerlink" title="3.&nbsp;1个Cookie的容量不超过4KB"></a>3.&nbsp;1个Cookie的容量不超过4KB</h2><blockquote>
+<p>如果要保存非字符串数据，超过4kb内容，只能使用session技术！</p>
 </blockquote>
-<h1 id="Cookie常见错误"><a href="#Cookie常见错误" class="headerlink" title="Cookie常见错误"></a>Cookie常见错误</h1><p>1.数据类型错误</p>
-<blockquote>
+<h1 id="四、Cookie常见错误"><a href="#四、Cookie常见错误" class="headerlink" title="四、Cookie常见错误"></a>四、Cookie常见错误</h1><h2 id="1-数据类型错误"><a href="#1-数据类型错误" class="headerlink" title="1.数据类型错误"></a>1.数据类型错误</h2><blockquote>
 <p><code>An invalid character [32] was present in the Cookie value</code></p>
 </blockquote>
 <p>错误代码:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">SimpleDateFormat simpleDateFormat = <span class="keyword">new</span> SimpleDateFormat(<span class="string">""</span>yyyy-MM-dd HH:mm:ss<span class="string">""</span>);</div><div class="line">String nowTime = simpleDateFormat.format(<span class="keyword">new</span> java.util.Date());</div><div class="line">Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">""</span>time<span class="string">""</span>nowTime);</div><div class="line">cookie.setMaxAge(<span class="number">3600</span>);</div><div class="line">response.addCookie(cookie);</div></pre></td></tr></table></figure></p>
-<p>解决方案:</p>
-<pre><code>SimpleDateFormat simpleDateFormat = new SimpleDateFormat(&quot;&quot;yyyy-MM-dd HH:mm:ss&quot;&quot;);
-这一行代码yyyy-MM-dd和HH:mm:ss中间有个空格就会出错。
-如果改成这样
-SimpleDateFormat simpleDateFormat = new SimpleDateFormat(&quot;&quot;yyyy-MM-ddHH:mm:ss&quot;&quot;);
-把yyyy-MM-dd和HH:mm:ss连着写就没有错了。
-这是因为cookie不能存放除英文以外的数据，具有很大的局限性
-</code></pre>]]></content>
+<p>解决方案:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">SimpleDateFormat simpleDateFormat = new SimpleDateFormat(&quot;&quot;yyyy-MM-dd HH:mm:ss&quot;&quot;);</div><div class="line">这一行代码yyyy-MM-dd和HH:mm:ss中间有个空格就会出错。</div><div class="line">如果改成这样</div><div class="line">SimpleDateFormat simpleDateFormat = new SimpleDateFormat(&quot;&quot;yyyy-MM-ddHH:mm:ss&quot;&quot;);</div><div class="line">把yyyy-MM-dd和HH:mm:ss连着写就没有错了。</div><div class="line">这是因为cookie不能存放除英文以外的数据，具有很大的局限性</div></pre></td></tr></table></figure></p>
+]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;会话技术分类&quot;&gt;&lt;a href=&quot;#会话技术分类&quot; class=&quot;headerlink&quot; title=&quot;会话技术分类&quot;&gt;&lt;/a&gt;会话技术分类&lt;/h1&gt;&lt;p&gt;cookie技术：会话数据保存在浏览器客户端&lt;br&gt;session技术：会话数据保存在服务器端&lt;/p&gt;
-&lt;h
+      &lt;h1 id=&quot;一、会话技术分类&quot;&gt;&lt;a href=&quot;#一、会话技术分类&quot; class=&quot;headerlink&quot; title=&quot;一、会话技术分类&quot;&gt;&lt;/a&gt;一、会话技术分类&lt;/h1&gt;&lt;p&gt;cookie技术：会话数据保存在浏览器客户端&lt;br&gt;session技术：会话数据保存在服务器
     
     </summary>
     
