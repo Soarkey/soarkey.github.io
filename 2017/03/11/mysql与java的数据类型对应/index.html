@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    
+    <link rel="canonical" href="true/2017/03/11/mysql与java的数据类型对应/">
+    
+    
+    <title>mysql、java数据类型的对应关系 | Soarkey的博客 | Stay hungry. Stay foolish.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="mysql,java">
+    <meta name="description" content="mysql数据类型与java数据类型的对应关系：
+类型名称显示长度数据库类型JAVA类型JDBC类型索引(int)VARCHARL+NVARCHARjava.lang.String12CHARNCHARjava.lang.String1BLOBL+NBLOBjava.lang.byte[]-4TEXT65535VARCHARjava.lang.String-1INTEGER4INTEGER UNS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql、java数据类型的对应关系">
+<meta property="og:url" content="https://soarkey.github.io/2017/03/11/mysql与java的数据类型对应/index.html">
+<meta property="og:site_name" content="Soarkey的博客">
+<meta property="og:description" content="mysql数据类型与java数据类型的对应关系：
+类型名称显示长度数据库类型JAVA类型JDBC类型索引(int)VARCHARL+NVARCHARjava.lang.String12CHARNCHARjava.lang.String1BLOBL+NBLOBjava.lang.byte[]-4TEXT65535VARCHARjava.lang.String-1INTEGER4INTEGER UNS">
+<meta property="og:updated_time" content="2017-03-11T13:21:55.927Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mysql、java数据类型的对应关系">
+<meta name="twitter:description" content="mysql数据类型与java数据类型的对应关系：
+类型名称显示长度数据库类型JAVA类型JDBC类型索引(int)VARCHARL+NVARCHARjava.lang.String12CHARNCHARjava.lang.String1BLOBL+NBLOBjava.lang.byte[]-4TEXT65535VARCHARjava.lang.String-1INTEGER4INTEGER UNS">
+    
+        <link rel="alternative" href="/atom.xml" title="Soarkey的博客" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.8">
+    <script>window.lazyScripts=[]</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Soarkey</h5>
+          <a href="mailto:985686485@qq.com" title="985686485@qq.com" class="mail">985686485@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/soarkey" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">mysql、java数据类型的对应关系</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">mysql、java数据类型的对应关系</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-03-11T00:00:00.000Z" itemprop="datePublished" class="page-time">
+  2017-03-11
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据类型对应关系/">数据类型对应关系</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+<article id="post-mysql与java的数据类型对应"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">mysql、java数据类型的对应关系</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017年03月11日 8:00" datetime="2017-03-11T00:00:00.000Z"  itemprop="datePublished">2017-03-11</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/数据类型对应关系/">数据类型对应关系</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+<span>
+    <a href="/2017/03/11/mysql与java的数据类型对应/#comments" class="ds-thread-count" data-thread-key="mysql与java的数据类型对应" data-count-type="comments"></a>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>mysql数据类型与java数据类型的对应关系：</p>
+<table><br><tr><br><th>类型名称</th><br><th>显示长度</th><br><th>数据库类型</th><br><th>JAVA类型</th><br><th>JDBC类型索引(int)</th><br></tr><br><tr><br><td>VARCHAR</td><br><td>L+N</td><br><td>VARCHAR</td><br><td>java.lang.String</td><br><td>12</td><br></tr><br><tr><br><td>CHAR</td><br><td>N</td><br><td>CHAR</td><br><td>java.lang.String</td><br><td>1</td><br></tr><br><tr><br><td>BLOB</td><br><td>L+N</td><br><td>BLOB</td><br><td>java.lang.byte[]</td><br><td>-4</td><br></tr><br><tr><br><td>TEXT</td><br><td>65535</td><br><td>VARCHAR</td><br><td>java.lang.String</td><br><td>-1</td><br></tr><br><td>INTEGER</td><br><td>4</td><br><td>INTEGER UNSIGNED</td><br><td>java.lang.Long</td><br><td>4</td><br><br><tr><br><td>TINYINT</td><br><td>3</td><br><td>TINYINT UNSIGNED</td><br><td>java.lang.Integer</td><br><td>-6</td><br></tr><br><tr><br><td>SMALLINT</td><br><td>5</td><br><td>SMALLINT UNSIGNED</td><br><td>java.lang.Integer</td><br><td>5</td><br></tr><br><tr><br><td>MEDIUMINT</td><br><td>8</td><br><td>MEDIUMINT UNSIGNED</td><br><td>java.lang.Integer</td><br><td>4</td><br></tr><br><tr><br><td>BIT</td><br><td>1</td><br><td>BIT</td><br><td>java.lang.Boolean</td><br><td>-7</td><br></tr><br><tr><br><td>BIGINT</td><br><td>20</td><br><td>BIGINT UNSIGNED</td><br><td>java.math.BigInteger</td><br><td>-5</td><br></tr><br><tr><br><td>FLOAT</td><br><td>4+8</td><br><td>FLOAT</td><br><td>java.lang.Float</td><br><td>7</td><br></tr><br><tr><br><td>DOUBLE</td><br><td>22</td><br><td>DOUBLE</td><br><td>java.lang.Double</td><br><td>8</td><br></tr><br><tr><br><td>DECIMAL</td><br><td>11</td><br><td>DECIMAL</td><br><td>java.math.BigDecimal</td><br><td>3</td><br></tr><br><tr><br><td>BOOLEAN</td><br><td>1</td><br><td>同TINYINT</td><br><td></td><br><td></td><br></tr><br><td>ID</td><br><td>11</td><br><td>PK (INTEGER UNSIGNED)</td><br><td>java.lang.Long</td><br><td>4</td><br><br><tr><br><td>DATE</td><br><td>10</td><br><td>DATE</td><br><td>java.sql.Date</td><br><td>91</td><br></tr><br><tr><br><td>TIME</td><br><td>8</td><br><td>TIME</td><br><td>java.sql.Time</td><br><td>92</td><br></tr><br><tr><br><td>DATETIME</td><br><td>19</td><br><td>DATETIME</td><br><td>java.sql.Timestamp</td><br><td>93</td><br></tr><br><tr><br><td>TIMESTAMP</td><br><td>19</td><br><td>TIMESTAMP</td><br><td>java.sql.Timestamp</td><br><td>93</td><br></tr><br><tr><br><td>YEAR</td><br><td>4</td><br><td>YEAR</td><br><td>java.sql.Date</td><br><td>91</td><br></tr></table>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-03-11T13:21:55.927Z" itemprop="dateUpdated">2017年3月11日 21:21</time>
+</span><br>
+
+
+        转载请注明出处：<a href="/2017/03/11/mysql与java的数据类型对应/" target="_blank" rel="external">https://soarkey.github.io/2017/03/11/mysql与java的数据类型对应/</a>
+    </div>
+    <footer>
+        <a href="https://soarkey.github.io">
+            <img src="/img/avatar.jpg" alt="Soarkey">
+            Soarkey
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://soarkey.github.io/2017/03/11/mysql与java的数据类型对应/&title=《mysql、java数据类型的对应关系》 — Soarkey的博客&pic=https://soarkey.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://soarkey.github.io/2017/03/11/mysql与java的数据类型对应/&title=《mysql、java数据类型的对应关系》 — Soarkey的博客&source=求知若饥，虚心若愚" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://soarkey.github.io/2017/03/11/mysql与java的数据类型对应/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《mysql、java数据类型的对应关系》 — Soarkey的博客&url=https://soarkey.github.io/2017/03/11/mysql与java的数据类型对应/&via=https://soarkey.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://soarkey.github.io/2017/03/11/mysql与java的数据类型对应/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/03/05/关于cookie的介绍/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">关于Cookie技术的介绍</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="mysql与java的数据类型对应" data-title="mysql、java数据类型的对应关系" data-url="https://soarkey.github.io/2017/03/11/mysql与java的数据类型对应/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢你的阅读
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>Soarkey的博客 &copy; 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://soarkey.github.io/2017/03/11/mysql与java的数据类型对应/&title=《mysql、java数据类型的对应关系》 — Soarkey的博客&pic=https://soarkey.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://soarkey.github.io/2017/03/11/mysql与java的数据类型对应/&title=《mysql、java数据类型的对应关系》 — Soarkey的博客&source=求知若饥，虚心若愚" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://soarkey.github.io/2017/03/11/mysql与java的数据类型对应/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《mysql、java数据类型的对应关系》 — Soarkey的博客&url=https://soarkey.github.io/2017/03/11/mysql与java的数据类型对应/&via=https://soarkey.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://soarkey.github.io/2017/03/11/mysql与java的数据类型对应/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACwklEQVR42u3aQY6DMAwF0N7/0p3tSCPg2441LF5WVaGQRyUSffvzicf310jO/Pv56ujV+fdHDw88PDy8wdT/jqtzele4f1jJlfM74uHh4W3zqq/4+3OiGwcLxv3176+Dh4eH9zZeMvX773N2vr3Gw8PDez8vf7knr/hvMPDw8PDew+tFCb3tci8mXs9a8PDw8GJeXkV6z+eV+h4eHh7euKo+eeEmTQD51L+tgYeHh7fBy1+4SdNANX49u3G/nA8eHh7eMi9pjcpf973gYN5GgIeHh7fHu79Z7zXdK33lRbVCMIGHh4e3xpt8kxfPqo8m3zQXYgg8PDy8MS/fwk7qTXm8GzVRzWt3eHh4eMvtAtWoYgLLF5hJ1IuHh4c35+ULw6SxIC/2n1qW8PDw8DZ4SfNTNYxIfpuEvPn2+uF/w8PDwzvKm5fnT22Uk4gk2Zo//Id4eHh4C7xehpEHE71YtjcfPDw8vD1eNQKYBLjJUjTZdpcnjYeHh9fiVQOF6tG80aoajhQKYHh4eHiHePnUq+Wr+Rs7j5IvFyc8PDy8NV6vkB/doDi53iO+jHrx8PDw1njNH8cRRrXc1QsdLpuu8PDw8BZ4vRaBarEqh1VLXwd6yvDw8PBavGrTVX6F/Le9h3X5gPDw8PAWeMkCMClQ5e0ChXpdLxTGw8PDO8rLA4V8GejFwck1yyU0PDw8vGXeXgGsurTk5zycj4eHh7fGyxeJ3la4Gu9WS1/lieLh4eG1eN/iqMYKeaY630A/tA7g4eHhnT9arh9Vg9dqgJs0e51q2MLDw8Or8ibl+SSEnT++6sJwrPsADw8P75aXTL13m2pM3GsaeFgY8PDw8P6Vd3Yv34sP8seNh4eH9wZeNbqtBr692KJcH8PDw8Mb86pFr2p0m7cj5FcuLAx4eHh4R3mTLWxvmTkV+35ODTw8PLz0zB+yoyvw03x/iwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+var duoshuoQuery = {short_name:'soarkey', theme: 'none'};
+lazyScripts.push('/js/embed.min.js?v=1.4.8');
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.8"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.8" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>

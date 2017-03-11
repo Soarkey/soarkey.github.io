@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://soarkey.github.io/"/>
-  <updated>2017-03-05T06:04:38.987Z</updated>
+  <updated>2017-03-11T13:21:55.927Z</updated>
   <id>https://soarkey.github.io/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql、java数据类型的对应关系</title>
+    <link href="https://soarkey.github.io/2017/03/11/mysql%E4%B8%8Ejava%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%AF%B9%E5%BA%94/"/>
+    <id>https://soarkey.github.io/2017/03/11/mysql与java的数据类型对应/</id>
+    <published>2017-03-11T00:00:00.000Z</published>
+    <updated>2017-03-11T13:21:55.927Z</updated>
+    
+    <content type="html"><![CDATA[<p>mysql数据类型与java数据类型的对应关系：</p>
+<table><br><tr><br><th>类型名称</th><br><th>显示长度</th><br><th>数据库类型</th><br><th>JAVA类型</th><br><th>JDBC类型索引(int)</th><br></tr><br><tr><br><td>VARCHAR</td><br><td>L+N</td><br><td>VARCHAR</td><br><td>java.lang.String</td><br><td>12</td><br></tr><br><tr><br><td>CHAR</td><br><td>N</td><br><td>CHAR</td><br><td>java.lang.String</td><br><td>1</td><br></tr><br><tr><br><td>BLOB</td><br><td>L+N</td><br><td>BLOB</td><br><td>java.lang.byte[]</td><br><td>-4</td><br></tr><br><tr><br><td>TEXT</td><br><td>65535</td><br><td>VARCHAR</td><br><td>java.lang.String</td><br><td>-1</td><br></tr><br><td>INTEGER</td><br><td>4</td><br><td>INTEGER UNSIGNED</td><br><td>java.lang.Long</td><br><td>4</td><br><br><tr><br><td>TINYINT</td><br><td>3</td><br><td>TINYINT UNSIGNED</td><br><td>java.lang.Integer</td><br><td>-6</td><br></tr><br><tr><br><td>SMALLINT</td><br><td>5</td><br><td>SMALLINT UNSIGNED</td><br><td>java.lang.Integer</td><br><td>5</td><br></tr><br><tr><br><td>MEDIUMINT</td><br><td>8</td><br><td>MEDIUMINT UNSIGNED</td><br><td>java.lang.Integer</td><br><td>4</td><br></tr><br><tr><br><td>BIT</td><br><td>1</td><br><td>BIT</td><br><td>java.lang.Boolean</td><br><td>-7</td><br></tr><br><tr><br><td>BIGINT</td><br><td>20</td><br><td>BIGINT UNSIGNED</td><br><td>java.math.BigInteger</td><br><td>-5</td><br></tr><br><tr><br><td>FLOAT</td><br><td>4+8</td><br><td>FLOAT</td><br><td>java.lang.Float</td><br><td>7</td><br></tr><br><tr><br><td>DOUBLE</td><br><td>22</td><br><td>DOUBLE</td><br><td>java.lang.Double</td><br><td>8</td><br></tr><br><tr><br><td>DECIMAL</td><br><td>11</td><br><td>DECIMAL</td><br><td>java.math.BigDecimal</td><br><td>3</td><br></tr><br><tr><br><td>BOOLEAN</td><br><td>1</td><br><td>同TINYINT</td><br><td></td><br><td></td><br></tr><br><td>ID</td><br><td>11</td><br><td>PK (INTEGER UNSIGNED)</td><br><td>java.lang.Long</td><br><td>4</td><br><br><tr><br><td>DATE</td><br><td>10</td><br><td>DATE</td><br><td>java.sql.Date</td><br><td>91</td><br></tr><br><tr><br><td>TIME</td><br><td>8</td><br><td>TIME</td><br><td>java.sql.Time</td><br><td>92</td><br></tr><br><tr><br><td>DATETIME</td><br><td>19</td><br><td>DATETIME</td><br><td>java.sql.Timestamp</td><br><td>93</td><br></tr><br><tr><br><td>TIMESTAMP</td><br><td>19</td><br><td>TIMESTAMP</td><br><td>java.sql.Timestamp</td><br><td>93</td><br></tr><br><tr><br><td>YEAR</td><br><td>4</td><br><td>YEAR</td><br><td>java.sql.Date</td><br><td>91</td><br></tr></table>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;mysql数据类型与java数据类型的对应关系：&lt;/p&gt;
+&lt;table&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;th&gt;类型名称&lt;/th&gt;&lt;br&gt;&lt;th&gt;显示长度&lt;/th&gt;&lt;br&gt;&lt;th&gt;数据库类型&lt;/th&gt;&lt;br&gt;&lt;th&gt;JAVA类型&lt;/th&gt;&lt;br&gt;&lt;th&gt;JDBC类型索引(int)&lt;
+    
+    </summary>
+    
+      <category term="数据类型对应关系" scheme="https://soarkey.github.io/categories/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB/"/>
+    
+    
+      <category term="mysql" scheme="https://soarkey.github.io/tags/mysql/"/>
+    
+      <category term="java" scheme="https://soarkey.github.io/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>关于Cookie技术的介绍</title>
