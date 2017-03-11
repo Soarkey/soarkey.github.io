@@ -47,9 +47,10 @@
     <link href="https://soarkey.github.io/2017/03/05/%E5%85%B3%E4%BA%8Ecookie%E7%9A%84%E4%BB%8B%E7%BB%8D/"/>
     <id>https://soarkey.github.io/2017/03/05/关于cookie的介绍/</id>
     <published>2017-03-05T00:00:00.000Z</published>
-    <updated>2017-03-05T06:04:38.987Z</updated>
+    <updated>2017-03-11T13:25:33.999Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="一、会话技术分类"><a href="#一、会话技术分类" class="headerlink" title="一、会话技术分类"></a>一、会话技术分类</h1><p>cookie技术：会话数据保存在浏览器客户端<br>session技术：会话数据保存在服务器端</p>
+    <content type="html"><![CDATA[<p>cookie基本知识介绍<br><a id="more"></a></p>
+<h1 id="一、会话技术分类"><a href="#一、会话技术分类" class="headerlink" title="一、会话技术分类"></a>一、会话技术分类</h1><p>cookie技术：会话数据保存在浏览器客户端<br>session技术：会话数据保存在服务器端</p>
 <h1 id="二、cookie使用步骤"><a href="#二、cookie使用步骤" class="headerlink" title="二、cookie使用步骤"></a>二、cookie使用步骤</h1><h2 id="1-构造Cookie"><a href="#1-构造Cookie" class="headerlink" title="1.构造Cookie"></a>1.构造Cookie</h2><ul>
 <li>Cookie(java.lang.String name, java.lang.String value)</li>
 </ul>
@@ -97,7 +98,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;一、会话技术分类&quot;&gt;&lt;a href=&quot;#一、会话技术分类&quot; class=&quot;headerlink&quot; title=&quot;一、会话技术分类&quot;&gt;&lt;/a&gt;一、会话技术分类&lt;/h1&gt;&lt;p&gt;cookie技术：会话数据保存在浏览器客户端&lt;br&gt;session技术：会话数据保存在服务器
+      &lt;p&gt;cookie基本知识介绍&lt;br&gt;
     
     </summary>
     
