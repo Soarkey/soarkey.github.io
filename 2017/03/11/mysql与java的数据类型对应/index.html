@@ -28,7 +28,7 @@
 <meta property="og:url" content="https://soarkey.github.io/2017/03/11/mysql与java的数据类型对应/index.html">
 <meta property="og:site_name" content="Soarkey的博客">
 <meta property="og:description" content="mysql数据类型与java数据类型的对应关系：">
-<meta property="og:updated_time" content="2017-03-11T13:48:55.743Z">
+<meta property="og:updated_time" content="2017-03-11T14:26:11.335Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql、java数据类型的对应关系">
 <meta name="twitter:description" content="mysql数据类型与java数据类型的对应关系：">
@@ -172,7 +172,159 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>mysql数据类型与java数据类型的对应关系：<br><a id="more"></a></p>
-<table align="center" margin{0}=""><br><tr><br><th>类型名称</th><br><th>显示长度</th><br><th>数据库类型</th><br><th>JAVA类型</th><br><th>JDBC类型索引(int)</th><br></tr><br><tr><br><td>VARCHAR</td><br><td>L+N</td><br><td>VARCHAR</td><br><td>java.lang.String</td><br><td>12</td><br></tr><br><tr><br><td>CHAR</td><br><td>N</td><br><td>CHAR</td><br><td>java.lang.String</td><br><td>1</td><br></tr><br><tr><br><td>BLOB</td><br><td>L+N</td><br><td>BLOB</td><br><td>java.lang.byte[]</td><br><td>-4</td><br></tr><br><tr><br><td>TEXT</td><br><td>65535</td><br><td>VARCHAR</td><br><td>java.lang.String</td><br><td>-1</td><br></tr><br><td>INTEGER</td><br><td>4</td><br><td>INTEGER UNSIGNED</td><br><td>java.lang.Long</td><br><td>4</td><br><br><tr><br><td>TINYINT</td><br><td>3</td><br><td>TINYINT UNSIGNED</td><br><td>java.lang.Integer</td><br><td>-6</td><br></tr><br><tr><br><td>SMALLINT</td><br><td>5</td><br><td>SMALLINT UNSIGNED</td><br><td>java.lang.Integer</td><br><td>5</td><br></tr><br><tr><br><td>MEDIUMINT</td><br><td>8</td><br><td>MEDIUMINT UNSIGNED</td><br><td>java.lang.Integer</td><br><td>4</td><br></tr><br><tr><br><td>BIT</td><br><td>1</td><br><td>BIT</td><br><td>java.lang.Boolean</td><br><td>-7</td><br></tr><br><tr><br><td>BIGINT</td><br><td>20</td><br><td>BIGINT UNSIGNED</td><br><td>java.math.BigInteger</td><br><td>-5</td><br></tr><br><tr><br><td>FLOAT</td><br><td>4+8</td><br><td>FLOAT</td><br><td>java.lang.Float</td><br><td>7</td><br></tr><br><tr><br><td>DOUBLE</td><br><td>22</td><br><td>DOUBLE</td><br><td>java.lang.Double</td><br><td>8</td><br></tr><br><tr><br><td>DECIMAL</td><br><td>11</td><br><td>DECIMAL</td><br><td>java.math.BigDecimal</td><br><td>3</td><br></tr><br><tr><br><td>BOOLEAN</td><br><td>1</td><br><td>同TINYINT</td><br><td></td><br><td></td><br></tr><br><td>ID</td><br><td>11</td><br><td>PK (INTEGER UNSIGNED)</td><br><td>java.lang.Long</td><br><td>4</td><br><br><tr><br><td>DATE</td><br><td>10</td><br><td>DATE</td><br><td>java.sql.Date</td><br><td>91</td><br></tr><br><tr><br><td>TIME</td><br><td>8</td><br><td>TIME</td><br><td>java.sql.Time</td><br><td>92</td><br></tr><br><tr><br><td>DATETIME</td><br><td>19</td><br><td>DATETIME</td><br><td>java.sql.Timestamp</td><br><td>93</td><br></tr><br><tr><br><td>TIMESTAMP</td><br><td>19</td><br><td>TIMESTAMP</td><br><td>java.sql.Timestamp</td><br><td>93</td><br></tr><br><tr><br><td>YEAR</td><br><td>4</td><br><td>YEAR</td><br><td>java.sql.Date</td><br><td>91</td><br></tr><br></table>
+<table>
+<thead>
+<tr>
+<th>类型名称</th>
+<th>显示长度</th>
+<th>数据库类型</th>
+<th>JAVA类型</th>
+<th>JDBC类型索引(int)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VARCHAR</td>
+<td>L+N</td>
+<td>VARCHAR</td>
+<td>java.lang.String</td>
+<td>12</td>
+</tr>
+<tr>
+<td>CHAR</td>
+<td>N</td>
+<td>CHAR</td>
+<td>java.lang.String</td>
+<td>1</td>
+</tr>
+<tr>
+<td>BLOB</td>
+<td>L+N</td>
+<td>BLOB</td>
+<td>java.lang.byte[]</td>
+<td>-4</td>
+</tr>
+<tr>
+<td>TEXT</td>
+<td>65535</td>
+<td>VARCHAR</td>
+<td>java.lang.String</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>INTEGER</td>
+<td>4</td>
+<td>INTEGER UNSIGNED</td>
+<td>java.lang.Long</td>
+<td>4</td>
+</tr>
+<tr>
+<td>TINYINT</td>
+<td>3</td>
+<td>TINYINT UNSIGNED</td>
+<td>java.lang.Integer</td>
+<td>-6</td>
+</tr>
+<tr>
+<td>SMALLINT</td>
+<td>5</td>
+<td>SMALLINT UNSIGNED</td>
+<td>java.lang.Integer</td>
+<td>5</td>
+</tr>
+<tr>
+<td>MEDIUMINT</td>
+<td>8</td>
+<td>MEDIUMINT UNSIGNED</td>
+<td>java.lang.Integer</td>
+<td>4</td>
+</tr>
+<tr>
+<td>BIT</td>
+<td>1</td>
+<td>BIT</td>
+<td>java.lang.Boolean</td>
+<td>-7</td>
+</tr>
+<tr>
+<td>BIGINT</td>
+<td>20</td>
+<td>BIGINT UNSIGNED</td>
+<td>java.math.BigInteger</td>
+<td>-5</td>
+</tr>
+<tr>
+<td>FLOAT</td>
+<td>4+8</td>
+<td>FLOAT</td>
+<td>java.lang.Float</td>
+<td>7</td>
+</tr>
+<tr>
+<td>DOUBLE</td>
+<td>22</td>
+<td>DOUBLE</td>
+<td>java.lang.Double</td>
+<td>8</td>
+</tr>
+<tr>
+<td>DECIMAL</td>
+<td>11</td>
+<td>DECIMAL</td>
+<td>java.math.BigDecimal</td>
+<td>3</td>
+</tr>
+<tr>
+<td>BOOLEAN</td>
+<td>1</td>
+<td>同TINYINT</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ID</td>
+<td>11</td>
+<td>PK (INTEGER UNSIGNED)</td>
+<td>java.lang.Long</td>
+<td>4</td>
+</tr>
+<tr>
+<td>DATE</td>
+<td>10</td>
+<td>DATE</td>
+<td>java.sql.Date</td>
+<td>91</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>8</td>
+<td>TIME</td>
+<td>java.sql.Time</td>
+<td>92</td>
+</tr>
+<tr>
+<td>DATETIME</td>
+<td>19</td>
+<td>DATETIME</td>
+<td>java.sql.Timestamp</td>
+<td>93</td>
+</tr>
+<tr>
+<td>TIMESTAMP</td>
+<td>19</td>
+<td>TIMESTAMP</td>
+<td>java.sql.Timestamp</td>
+<td>93</td>
+</tr>
+<tr>
+<td>YEAR</td>
+<td>4</td>
+<td>YEAR</td>
+<td>java.sql.Date</td>
+<td>91</td>
+</tr>
+</tbody>
+</table>
 
         </div>
 
@@ -180,7 +332,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-03-11T13:48:55.743Z" itemprop="dateUpdated">2017年3月11日 21:48</time>
+    最后更新时间：<time datetime="2017-03-11T14:26:11.335Z" itemprop="dateUpdated">2017年3月11日 22:26</time>
 </span><br>
 
 
