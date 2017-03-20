@@ -1,28 +1,21 @@
 <!DOCTYPE html>
-<html>
+
+
+  <html class="light page-post">
+
+
 <head>
-    
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>灰色预测模型解题步骤 | Soarkey的博客</title>
 
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+  
+    <meta name="keywords" content="灰色预测,数学模型," />
+  
 
-
-
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    
-    
-    <link rel="canonical" href="true/2017/03/16/灰色预测模型解题步骤/">
-    
-    
-    <title>灰色预测模型解题步骤 | Soarkey的博客 | Stay hungry. Stay foolish.</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta name="theme-color" content="#3F51B5">
-    
-    
-    <meta name="keywords" content="灰色预测,数学模型">
-    <meta name="description" content="灰色模型简介白色系统是指系统内部特征是完全已知的；黑色系统是指系统内部信息完全未知的；而灰色系统是介于白色系统和黑色系统之间的一种系统，灰色系统其内部一部分信息已知，另一部分信息未知或不确定。">
+  <meta name="description" content="灰色模型简介白色系统是指系统内部特征是完全已知的；黑色系统是指系统内部信息完全未知的；而灰色系统是介于白色系统和黑色系统之间的一种系统，灰色系统其内部一部分信息已知，另一部分信息未知或不确定。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="灰色预测模型解题步骤">
 <meta property="og:url" content="https://soarkey.github.io/2017/03/16/灰色预测模型解题步骤/index.html">
@@ -32,153 +25,169 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="灰色预测模型解题步骤">
 <meta name="twitter:description" content="灰色模型简介白色系统是指系统内部特征是完全已知的；黑色系统是指系统内部信息完全未知的；而灰色系统是介于白色系统和黑色系统之间的一种系统，灰色系统其内部一部分信息已知，另一部分信息未知或不确定。">
-    
-        <link rel="alternative" href="/atom.xml" title="Soarkey的博客" type="application/atom+xml">
-    
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/style.css?v=1.4.8">
-    <script>window.lazyScripts=[]</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/soarkey-style.css">
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
 </head>
 
 <body>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
 
-    <aside id="menu" class="hide" >
-  <div class="inner flex-row-vertical">
-    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-        <i class="icon icon-lg icon-close"></i>
+
+  
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><span id="toolbox-mobile" class="toolbox-mobile">索引</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">索引</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
     </a>
-    <div class="brand-wrap">
-      <div class="brand">
-        <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/img/avatar.jpg">
-        </a>
-        <hgroup class="introduce">
-          <h5 class="nickname">Soarkey</h5>
-          <a href="mailto:985686485@qq.com" title="985686485@qq.com" class="mail">985686485@qq.com</a>
-        </hgroup>
-      </div>
-    </div>
-    <div class="scroll-wrap flex-col">
-      <ul class="nav">
-        
-            <li class="waves-block waves-effect">
-              <a href="/"  >
-                <i class="icon icon-lg icon-home"></i>
-                主页
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/archives"  >
-                <i class="icon icon-lg icon-archives"></i>
-                Archives
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/tags"  >
-                <i class="icon icon-lg icon-tags"></i>
-                Tags
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://github.com/soarkey" target="_blank" >
-                <i class="icon icon-lg icon-github"></i>
-                Github
-              </a>
-            </li>
-        
-      </ul>
-    </div>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+    </ul>
   </div>
-</aside>
 
-    <main id="main">
-        <header class="top-header" id="header">
-    <div class="flex-row">
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
-          <i class="icon icon-lg icon-navicon"></i>
-        </a>
-        <div class="flex-col header-title ellipsis">灰色预测模型解题步骤</div>
-        
-        <div class="search-wrap" id="search-wrap">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-                <i class="icon icon-lg icon-chevron-left"></i>
-            </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
-                <i class="icon icon-lg icon-search"></i>
-            </a>
-        </div>
-        
-        
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
-            <i class="icon icon-lg icon-share-alt"></i>
-        </a>
-        
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#灰色模型简介"><span class="toc-text">灰色模型简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#适用情景"><span class="toc-text">适用情景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GM-1-1-模型"><span class="toc-text">GM(1,1)模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-一次累加生成序列"><span class="toc-text">1.一次累加生成序列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-建立灰微分方程与白化微分方程"><span class="toc-text">2.建立灰微分方程与白化微分方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-对累加生成数据做均值生成序列B与常数项向量Y"><span class="toc-text">3.对累加生成数据做均值生成序列B与常数项向量Y</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-用最小二乘法求解灰参数u"><span class="toc-text">4.用最小二乘法求解灰参数u</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-求解白化微分方程"><span class="toc-text">5.求解白化微分方程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#例题解析"><span class="toc-text">例题解析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-级比检验"><span class="toc-text">1.级比检验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-GM-1-1-建模"><span class="toc-text">2.GM(1,1)建模</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-模型检验"><span class="toc-text">3.模型检验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-附MATLAB代码"><span class="toc-text">4.附MATLAB代码</span></a></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-灰色预测模型解题步骤" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">灰色预测模型解题步骤</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2017.03.16</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Soarkey</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/灰色模型/">灰色模型</a>
+  </span>
+
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+        <i class="icon-comment"></i> 
+        <span class="ds-thread-count" data-thread-key="post-灰色预测模型解题步骤"><i class="fa fa-spinner fa-spin"></i></span> 条评论
+      
+      
     </div>
-</header>
-<header class="content-header post-header">
+  </header>
 
-    <div class="container fade-scale">
-        <h1 class="title">灰色预测模型解题步骤</h1>
-        <h5 class="subtitle">
-            
-                <time datetime="2017-03-16T00:00:00.000Z" itemprop="datePublished" class="page-time">
-  2017-03-16
-</time>
-
-
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/灰色模型/">灰色模型</a></li></ul>
-
-            
-        </h5>
-    </div>
-
+  <div class="article-content">
     
-
-</header>
-
-
-<div class="container body-wrap">
-    
-    <aside class="post-widget">
-        <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#灰色模型简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">灰色模型简介</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#适用情景"><span class="post-toc-number">2.</span> <span class="post-toc-text">适用情景</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#GM-1-1-模型"><span class="post-toc-number">3.</span> <span class="post-toc-text">GM(1,1)模型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-一次累加生成序列"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1.一次累加生成序列</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-建立灰微分方程与白化微分方程"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2.建立灰微分方程与白化微分方程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-对累加生成数据做均值生成序列B与常数项向量Y"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">3.对累加生成数据做均值生成序列B与常数项向量Y</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-用最小二乘法求解灰参数u"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">4.用最小二乘法求解灰参数u</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-求解白化微分方程"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">5.求解白化微分方程</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#例题解析"><span class="post-toc-number">4.</span> <span class="post-toc-text">例题解析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-级比检验"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">1.级比检验</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-GM-1-1-建模"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">2.GM(1,1)建模</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-模型检验"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">3.模型检验</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-附MATLAB代码"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">4.附MATLAB代码</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-    
-<article id="post-灰色预测模型解题步骤"
-  class="post-article article-type-post fade" itemprop="blogPost">
-
-    <div class="post-card">
-        <h1 class="post-card-title">灰色预测模型解题步骤</h1>
-        <div class="post-meta">
-            <time class="post-time" title="2017年03月16日 8:00" datetime="2017-03-16T00:00:00.000Z"  itemprop="datePublished">2017-03-16</time>
-
-            
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/灰色模型/">灰色模型</a></li></ul>
-
-
-
-            
-<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
-    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
-</span>
-
-
-            
-<span>
-    <a href="/2017/03/16/灰色预测模型解题步骤/#comments" class="ds-thread-count" data-thread-key="灰色预测模型解题步骤" data-count-type="comments"></a>
-</span>
-
-
-        </div>
-        <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="灰色模型简介"><a href="#灰色模型简介" class="headerlink" title="灰色模型简介"></a>灰色模型简介</h1><p>白色系统是指系统内部特征是完全已知的；黑色系统是指系统内部信息完全未知的；<br>而灰色系统是介于白色系统和黑色系统之间的一种系统，灰色系统其内部一部分信息已知，另一部分信息未知或不确定。<br><a id="more"></a></p>
+      <h1 id="灰色模型简介"><a href="#灰色模型简介" class="headerlink" title="灰色模型简介"></a>灰色模型简介</h1><p>白色系统是指系统内部特征是完全已知的；黑色系统是指系统内部信息完全未知的；<br>而灰色系统是介于白色系统和黑色系统之间的一种系统，灰色系统其内部一部分信息已知，另一部分信息未知或不确定。<br><a id="more"></a></p>
 <p>灰色预测，是指对系统行为特征值的发展变化进行的预测，对既含有已知信息又含有不确定信息的系统进行的预测，也就是对在一定范围内变化的、与时间序列有关的灰过程进行预测。尽管灰过程中所显示的现象是随机的、杂乱无章的，但毕竟是有序的、有界的，因此得到的数据集合具备潜在的规律。灰色预测是利用这种规律建立灰色模型对灰色系统进行预测。</p>
 <p>目前使用最广泛的灰色预测模型就是关于数列预测的一个变量、一阶微分的GM(1,1)模型。它是基于随机的原始时间序列，经按时间累加后所形成的新的时间序列呈现的规律可用一阶线性微分方程的解来逼近。经证明，经一阶线性微分方程的解逼近所揭示的原始时间序列呈指数变化规律。因此，当原始时间序列隐含着指数变化规律时，灰色模型GM(1,1)的预测是非常成功的。</p>
 <h1 id="适用情景"><a href="#适用情景" class="headerlink" title="适用情景"></a>适用情景</h1><p>灰色模型适用于适合数据较少的情况（超过三组就行）,一般是在其他预测方法用不了时采用的方法。</p>
@@ -337,282 +346,172 @@ $$\lambda(k)=\frac{x^{(0)}(k-1)}{x^{(0)}(k)},k=2,3,...,n$$
 <p>经验证，该模型的精度较高，可进行预测和预报。</p>
 <h2 id="4-附MATLAB代码"><a href="#4-附MATLAB代码" class="headerlink" title="4.附MATLAB代码"></a>4.附MATLAB代码</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">% 灰色模型</span></div><div class="line">clear;</div><div class="line">close all;</div><div class="line">clc;</div><div class="line"><span class="comment">% 输入数据</span></div><div class="line">x0=[<span class="number">71.1</span> <span class="number">72.4</span> <span class="number">72.4</span> <span class="number">72.1</span> <span class="number">71.4</span> <span class="number">72.0</span> <span class="number">71.6</span>]';  <span class="comment">% 注意为列向量</span></div><div class="line">n=<span class="built_in">length</span>(x0);</div><div class="line">lamda=x0(<span class="number">1</span>:n<span class="number">-1</span>)./x0(<span class="number">2</span>:n)    <span class="comment">% 计算级比</span></div><div class="line">range=minmax(lamda')        <span class="comment">% 计算级比的范围</span></div><div class="line">x1=cumsum(x0)               <span class="comment">% 累加运算</span></div><div class="line">B=[<span class="number">-0.5</span>*(x1(<span class="number">1</span>:n<span class="number">-1</span>)+x1(<span class="number">2</span>:n)),ones(n<span class="number">-1</span>,<span class="number">1</span>)];</div><div class="line">Y=x0(<span class="number">2</span>:n);</div><div class="line">u=B\Y;                      <span class="comment">% 拟合参数u(1)=a,u(2)=b</span></div><div class="line">syms x(t)</div><div class="line">x=dsolve(diff(x)+u(<span class="number">1</span>)*x == u(<span class="number">2</span>),x(<span class="number">0</span>) == x0(<span class="number">1</span>)); <span class="comment">% 求微分方程的特解 符号解</span></div><div class="line">xt=vpa(x,<span class="number">6</span>)                <span class="comment">% 以小数格式显示微分方程的解</span></div><div class="line">yuce1=subs(x,t,[<span class="number">0</span>:n<span class="number">-1</span>]);   <span class="comment">% 求已知数据的预测值</span></div><div class="line">yuce2=double(yuce1);       <span class="comment">% 符号数转为数值类型，否则无法做差分运算</span></div><div class="line"></div><div class="line">yuce=[x0(<span class="number">1</span>),diff(yuce2)]   <span class="comment">% 差分运算,还原数据</span></div><div class="line">epsilon=x0'-yuce           <span class="comment">% 计算残差</span></div><div class="line">delta=<span class="built_in">abs</span>(epsilon./x0')    <span class="comment">% 计算相对误差</span></div><div class="line">rho=<span class="number">1</span>-(<span class="number">1</span><span class="number">-0.5</span>*u(<span class="number">1</span>))/(<span class="number">1</span>+<span class="number">0.5</span>*u(<span class="number">1</span>))*lamda'   <span class="comment">% 计算级比偏差值，u(1)=a</span></div></pre></td></tr></table></figure>
 
-        </div>
-
-        <blockquote class="post-copyright">
-    <div class="content">
-        
-<span class="post-time">
-    最后更新时间：<time datetime="2017-03-17T13:27:27.950Z" itemprop="dateUpdated">2017年3月17日 21:27</time>
-</span><br>
-
-
-        转载请注明出处：<a href="/2017/03/16/灰色预测模型解题步骤/" target="_blank" rel="external">https://soarkey.github.io/2017/03/16/灰色预测模型解题步骤/</a>
-    </div>
-    <footer>
-        <a href="https://soarkey.github.io">
-            <img src="/img/avatar.jpg" alt="Soarkey">
-            Soarkey
-        </a>
-    </footer>
-</blockquote>
-
-        
-<div class="page-reward">
-    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
-</div>
-
-
-
-        <div class="post-footer">
-            
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数学模型/">数学模型</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/灰色预测/">灰色预测</a></li></ul>
-
-
-            
-<div class="page-share-wrap">
     
-
-<div class="page-share" id="pageShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://soarkey.github.io/2017/03/16/灰色预测模型解题步骤/&title=《灰色预测模型解题步骤》 — Soarkey的博客&pic=https://soarkey.github.io/img/avatar.jpg" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://soarkey.github.io/2017/03/16/灰色预测模型解题步骤/&title=《灰色预测模型解题步骤》 — Soarkey的博客&source=灰色模型简介白色系统是指系统内部特征是完全已知的；黑色系统是指系统内部信息完全未知的；而灰色系统是介于白色系统和黑色系统之间的一种系统，灰色系统其内部一部..." data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://soarkey.github.io/2017/03/16/灰色预测模型解题步骤/" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《灰色预测模型解题步骤》 — Soarkey的博客&url=https://soarkey.github.io/2017/03/16/灰色预测模型解题步骤/&via=https://soarkey.github.io" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://soarkey.github.io/2017/03/16/灰色预测模型解题步骤/" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
-
-
-
-    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
-        <i class="icon icon-share-alt icon-lg"></i>
-    </a>
-</div>
-
-
-
-        </div>
-    </div>
-
-    
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
-  
-
-  
-    <div class="waves-block waves-effect next">
-      <a href="/2017/03/11/mysql与java的数据类型对应/" id="post-next" class="post-nav-link">
-        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">mysql、java数据类型的对应关系</h4>
-      </a>
-    </div>
-  
-</nav>
-
-
-
-    
-
-<div class="comments" id="comments">
-    <div class="ds-thread" data-thread-key="灰色预测模型解题步骤" data-title="灰色预测模型解题步骤" data-url="https://soarkey.github.io/2017/03/16/灰色预测模型解题步骤/"></div>
-</div>
-<script>
-lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
-
-
-</script>
-
-
-
-
-
-
-
+  </div>
 </article>
 
-<div id="reward" class="page-modal reward-lay">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <h3 class="reward-title">
-        <i class="icon icon-quote-left"></i>
-        谢谢你的阅读
-        <i class="icon icon-quote-right"></i>
-    </h3>
-    <ul class="reward-items">
-        
 
-        
-    </ul>
-</div>
+   
 
-
-
-</div>
-
-        <footer class="footer">
-    <div class="top">
-        
-<p>
-    <span id="busuanzi_container_site_uv" style='display:none'>
-        站点总访客数：<span id="busuanzi_value_site_uv"></span>
-    </span>
-    <span id="busuanzi_container_site_pv" style='display:none'>
-        站点总访问量：<span id="busuanzi_value_site_pv"></span>
-    </span>
-</p>
-
-
-        <p>
-            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
-            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
-        </p>
-    </div>
-    <div class="bottom">
-        <p>
-            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
-            <span>Soarkey的博客 &copy; 2017</span>
-        </p>
-    </div>
-</footer>
-
-    </main>
-    <div class="mask" id="mask"></div>
-<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
-
-
-
-<div class="global-share" id="globalShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://soarkey.github.io/2017/03/16/灰色预测模型解题步骤/&title=《灰色预测模型解题步骤》 — Soarkey的博客&pic=https://soarkey.github.io/img/avatar.jpg" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://soarkey.github.io/2017/03/16/灰色预测模型解题步骤/&title=《灰色预测模型解题步骤》 — Soarkey的博客&source=灰色模型简介白色系统是指系统内部特征是完全已知的；黑色系统是指系统内部信息完全未知的；而灰色系统是介于白色系统和黑色系统之间的一种系统，灰色系统其内部一部..." data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://soarkey.github.io/2017/03/16/灰色预测模型解题步骤/" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《灰色预测模型解题步骤》 — Soarkey的博客&url=https://soarkey.github.io/2017/03/16/灰色预测模型解题步骤/&via=https://soarkey.github.io" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://soarkey.github.io/2017/03/16/灰色预测模型解题步骤/" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
-
-
-<div class="page-modal wx-share" id="wxShare">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuElEQVR42u3a0WrrQAwE0P7/T6dwny6UJDPSLmnh+Mk0iePjwmoz0tdXfDz+Hf+fPzt+fur1q8n5syscO/Dw8PBGt/76dltGQnp2hbOPGA8PD+8eL7nc6/fsrzArHm/uBw8PD++jvKRUtNvr2aYcDw8P7+/yZtvfzXvw8PDwfg8vCSPyIjELIzaP40DWgoeHhxfzZg2wz55f7+/h4eHhjbrq+4IxizaO3SEeHh7eBV475JRHAPvwYvZQ3mQteHh4eGvefpRqtpTPYoi6IOHh4eFd4+UL/SaemGHycPbNZhoPDw/vEG8TE2xGqfKN+GwLHoUReHh4eCPejc3u2bGAWexb/GLAw8PDG/FmoWpyhTYOLm69rXh4eHh4h3iz9n+yoG/ig/wv0WYdDw8P7wIvLwyzZbqeZSjx+T3j4eHh7XmzH/ltzJrHE20heRNt4OHh4V3gbZbmzTBBPsKVl5OnDwgPDw/vKK/9mvy40dCqkXh4eHgXeG1U+giOpBmWX+fY2BYeHh7eBV5eKpKtdrJ8t4202SYeDw8P7yyvHX7aN7Rmza081IgCXDw8PLwF79Q4VLstbsOONryIJiPw8PDwFry8KdU2w9rINW+h5f8SPDw8vBu8upkUbHZPDVflLbGo1uHh4eGteafaUXkIu1/ii0/h4eHhXeDNItRNSyy/uaQ8FIUHDw8P7xAv2ebmDbC2HTUrIcWreHh4eBd4eayQvyfB55vjfXiBh4eHd5b3KI/261tYXjCiYoCHh4d3gdeOPbXloV36Z0MM+6EuPDw8vJY3a32dmllImmqr1hoeHh7eNd4mwG1HtfLHlBctPDw8vN/Ma9mbTXO+WX8T5uLh4eF9iLdZ+jfhRV6KnmbVeHh4eBd4p5peszZ/XjzaSBcPDw/vBq9tgLWDWXl8MGt9bYIMPDw8vJL3DZ7ESt8Sks8bAAAAAElFTkSuQmCC" alt="微信分享二维码">
-</div>
-
-
-
-
-    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
-<script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
-
-var duoshuoQuery = {short_name:'soarkey', theme: 'none'};
-lazyScripts.push('/js/embed.min.js?v=1.4.8');
-
-
-
-</script>
-
-<script src="/js/main.min.js?v=1.4.8"></script>
-
-
-<div class="search-panel" id="search-panel">
-    <ul class="search-result" id="search-result"></ul>
-</div>
-<template id="search-tpl">
-<li class="item">
-    <a href="{path}" class="waves-block waves-effect">
-        <div class="title ellipsis" title="{title}">{title}</div>
-        <div class="flex-row flex-middle">
-            <div class="tags ellipsis">
-                {tags}
-            </div>
-            <time class="flex-col time">{date}</time>
-        </div>
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2017/03/11/mysql与java的数据类型对应/">
+        <i class="icon icon-angle-left"></i>
     </a>
-</li>
-</template>
+    <a class="hide pull-right" href="/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
 
-<script src="/js/search.min.js?v=1.4.8" async></script>
 
 
 
-<!-- mathjax config similar to math.stackexchange -->
+</div>
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+  <section class="duoshuo-comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-灰色预测模型解题步骤" 
+      data-title="灰色预测模型解题步骤" data-url="https://soarkey.github.io/2017/03/16/灰色预测模型解题步骤/index.html"></div>
+    <!-- 多说评论框 end -->
+  </section>
+
+
+
+
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:"soarkey"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+
+
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
     }
-});
 
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-});
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
 </script>
-
-<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
-
-
-
-
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
 
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
