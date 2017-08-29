@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Soarkey的博客 - Stay hungry. Stay foolish.</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="soarkey,"> 
+    <meta name="description" content="求知若饥，虚心若愚,"> 
+    <meta name="author" content="Soarkey"> 
+    <link rel="alternative" href="atom.xml" title="Soarkey的博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="/css/diaspora.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+<body class="loading">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">持久层设计理念的演变</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div>
+        <h1 class="title">持久层设计理念的演变</h1>
+        <div class="stuff">
+            <span> 2017, 七月, 12</span>
+        </div>
+        <div class="content markdown">
+            <blockquote>
+<p>MVC架构中的Model层是与业务逻辑和数据关联最为紧密的部分，持久层作为Model层面的主要组成，其设计的优劣势必对系统的整体表现产生至关重要的影响。<br> —— 《深入浅出Hibernate》</p>
+</blockquote>
+<h1 id="持久层是什么"><a href="#持久层是什么" class="headerlink" title="持久层是什么"></a>持久层是什么</h1><p>持久层是在系统逻辑层面上，专注于实现数据持久化的一个相对独立的领域。说白了就是应用与数据库之间沟通的“桥梁”，将数据库代码和应用业务代码从耦合的关系中脱离出来。</p>
+<h1 id="持久层设计与解耦思想演进"><a href="#持久层设计与解耦思想演进" class="headerlink" title="持久层设计与解耦思想演进"></a>持久层设计与解耦思想演进</h1><p>简而言之，解耦就是将原先关联程度比较高的两个事物或者多个事物通过一些手段来达到降低其关联程度的效果。</p>
+<blockquote>
+<p>解耦合设计要达到的目标</p>
+<p>1.应用层解耦合–应用逻辑与数据逻辑相分离</p>
+<p>2.资源层解耦合–逻辑结构与物理结构相分离</p>
+</blockquote>
+<h2 id="1-早期混乱的JDBC"><a href="#1-早期混乱的JDBC" class="headerlink" title="1.早期混乱的JDBC"></a>1.早期混乱的JDBC</h2><p>早期的对数据库的操作功能是在JDBC基础上直接实现的，其中糅合着大量的JDBC连接代码和SQL代码，显得极为混乱。<br>例如：用户查询账户余额<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">selectAmount</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</div><div class="line">trueConnection conn = <span class="keyword">null</span>;</div><div class="line">trueStatement stmt = <span class="keyword">null</span>;</div><div class="line">trueResultSet rs = <span class="keyword">null</span>;</div><div class="line">true<span class="keyword">double</span> amount = <span class="number">0</span>;</div><div class="line">true<span class="keyword">try</span>&#123;</div><div class="line">truetrueClass.forName(<span class="string">"com.mysql.jdbc.Driver"</span>);</div><div class="line">truetrueconn = DriverManager.getConnection(</div><div class="line">truetruetruetrue<span class="string">"jdbc:mysql://localhost:3306/demo"</span>, <span class="comment">//url</span></div><div class="line">truetruetruetrue<span class="string">"root"</span>, <span class="comment">//user</span></div><div class="line">truetruetruetrue<span class="string">"123456"</span>  <span class="comment">//password</span></div><div class="line">truetruetruetrue);</div><div class="line">truetruestmt = conn.createStatement();</div><div class="line">truetrueString sql = <span class="string">"select amount from user where id = "</span>+id+<span class="string">";"</span>;</div><div class="line">truetruers = stmt.executeQuery(sql);</div><div class="line">truetrue<span class="keyword">while</span>(rs.next())&#123;</div><div class="line">truetruetrueamount = rs.getDouble(<span class="number">1</span>);</div><div class="line">truetrue&#125;</div><div class="line">true&#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">truetruee.printStackTrace();</div><div class="line">true&#125; <span class="keyword">finally</span> &#123;</div><div class="line">truetrue<span class="keyword">if</span> (conn != <span class="keyword">null</span>) &#123;</div><div class="line">truetruetrue<span class="keyword">try</span> &#123;</div><div class="line">truetruetruetrue<span class="keyword">if</span> (stmt != <span class="keyword">null</span>) &#123;</div><div class="line">truetruetruetruetrue<span class="keyword">try</span> &#123;</div><div class="line">truetruetruetruetruetruestmt.close();</div><div class="line">truetruetruetruetrue&#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">truetruetruetruetruetruee.printStackTrace();</div><div class="line">truetruetruetruetrue&#125;</div><div class="line">truetruetruetrue&#125;</div><div class="line">truetruetruetrueconn.close();</div><div class="line">truetruetrue&#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">truetruetruetruee.printStackTrace();</div><div class="line">truetruetrue&#125;</div><div class="line">truetrue&#125;</div><div class="line">true&#125;</div><div class="line">true<span class="keyword">return</span> amount;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面这段代码虽然完成了要求的功能，但SQL和业务的相互耦合会使得日后的修改变得非常困难，而且一旦数据库发生变更，对与开发者而言将会是一个噩梦。</p>
+<h2 id="2-XML配置文件实现参数化"><a href="#2-XML配置文件实现参数化" class="headerlink" title="2.XML配置文件实现参数化"></a>2.XML配置文件实现参数化</h2><p>相比于将数据库连接用户密码暴露在数据库操作代码中，利用XML文件配置连接将会是一个更便捷高效的方法。</p>
+<p>举个例子，XML配置文件可以这样写<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">database</span> <span class="attr">name</span>=<span class="string">"mysqldb"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">driver</span>&gt;</span>com.mysql.jdbc.Driver<span class="tag">&lt;/<span class="name">driver</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>jdbc:mysql://localhost:3306/demo<span class="tag">&lt;/<span class="name">url</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">user</span>&gt;</span>root<span class="tag">&lt;/<span class="name">user</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">password</span>&gt;</span>root<span class="tag">&lt;/<span class="name">password</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">database</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>然后再用Java读取XML文件进行连接配置，这样就可以省去日后数据库用户名和密码变更的麻烦了，而且只需要维护一份XML文件，工作量相比之前大大减少了。</p>
+<h2 id="3-JDBC工具类"><a href="#3-JDBC工具类" class="headerlink" title="3.JDBC工具类"></a>3.JDBC工具类</h2><p>对之前的模式进行重新审视后，我们发现这其中有一个共同点，就是每个业务中都将涉及获取数据库连接的获取和释放，能不能将这些共同的代码抽离出来呢？</p>
+<p>很自然地，我们就能想到用一个类封装数据库的连接和获取，对外提供统一的方法操作。</p>
+<p>代码示例：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DBUtils</span> </span>&#123;</div><div class="line">true<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getConnection</span><span class="params">()</span> </span>&#123;</div><div class="line">truetrueConnection conn = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">truetrueString url = <span class="string">"jdbc:mysql://localhost:3306/demo"</span>;</div><div class="line">truetrueString username = <span class="string">"root"</span>;</div><div class="line">truetrueString password = <span class="string">"123456"</span>;</div><div class="line"></div><div class="line">truetrue<span class="keyword">try</span>&#123;</div><div class="line">truetruetrueClass.forName(<span class="string">"com.mysql.jdbc.Driver"</span>);</div><div class="line">truetruetrueconn = (Connection) DriverManager.getConnection(url,username,password);</div><div class="line"></div><div class="line">truetruetrue<span class="keyword">if</span>(conn != <span class="keyword">null</span>)&#123;</div><div class="line">truetruetruetrueSystem.out.println(<span class="string">"hello"</span>);</div><div class="line">truetruetrue&#125;</div><div class="line"></div><div class="line">truetrue&#125;<span class="keyword">catch</span>(Exception e)&#123;</div><div class="line">truetruetruee.printStackTrace();</div><div class="line">truetrue&#125;</div><div class="line">truetrue<span class="keyword">return</span> conn;</div><div class="line">true&#125;</div><div class="line"></div><div class="line">true<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">closeConnection</span><span class="params">(Connection conn)</span> </span>&#123;</div><div class="line">truetrue<span class="keyword">try</span>&#123;</div><div class="line">truetruetrueconn.close();</div><div class="line">truetrue&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">truetruetruee.printStackTrace();</div><div class="line">truetrue&#125;</div><div class="line">true&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="4-DAO模式的出现"><a href="#4-DAO模式的出现" class="headerlink" title="4.DAO模式的出现"></a>4.DAO模式的出现</h2><p>虽然XML文档配置是个不错的方法，但是我们的系统可能有成百上千的业务过程，每一个业务处理中都涉及许多重复不必要的数据库连接的获取、操作和释放过程，代码冗余，效率很低。<br>为了解决这个问题，我们便引入了DAO(Data Access Object)模式，通俗地说就是将对数据的增删改查操作统一封装到数据操作类中，将业务流程封装到业务逻辑类中，从而将数据访问和业务逻辑分离开来，解除两者之间的耦合关系。</p>
+<p>DAO模式的实现层次图：</p>
+<p><img src="https://static.oschina.net/uploads/img/201707/12093639_R4gB.jpg" alt="DAO模式的实现层次图"></p>
+<blockquote>
+<p>某种意义上说，DAO = Data + Accessor + Domain Object</p>
+<p>Domain Object即是代码中常用的Java Bean对象</p>
+</blockquote>
+<p>简单描述：<br>我们以用户登录为例，来讲解DAO模式从上到下的层次。</p>
+<p>（1）业务逻辑类</p>
+<p>只负责业务的实现过程，而无需顾及数据的具体操作，例如<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> Class UserService&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">login</span><span class="params">(String username, String password)</span></span>&#123;</div><div class="line">        UserDao userDao = <span class="keyword">new</span> UserDao();</div><div class="line">        User user = userDao.login(username,password);</div><div class="line">        <span class="keyword">return</span> user;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>（2）数据库操作类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> Class UserDao&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">login</span><span class="params">(String username, String password)</span></span>&#123;</div><div class="line">truetrueString sql = <span class="string">"..."</span>; <span class="comment">//sql代码</span></div><div class="line">truetrueConnection conn = (Connection) JDBCUtil.getConnection();</div><div class="line">truetrueUser user = <span class="keyword">null</span>;</div><div class="line">truetrue<span class="comment">//...  对数据库的具体操作省略</span></div><div class="line">truetrue<span class="keyword">return</span> user;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">save</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="comment">//...</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delete</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="comment">//...</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>（3）Java Bean类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span></span>&#123;</div><div class="line">true<span class="keyword">private</span> String id;</div><div class="line">true<span class="keyword">private</span> String username;</div><div class="line">true<span class="keyword">private</span> String password;</div><div class="line"></div><div class="line">true<span class="comment">//... getters和setters方法</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这种方式很好地将数据访问底层实现和业务层分离开来，意味着我们可以在上层不变的前提下，仅仅通过更换底层实现来切换数据库访问的机制，从而可以让我们的应用部署在不同的数据库平台上。更重要的是，我们可以加入数据库连接池及各种缓存机制（如Statement Cache，Data Cache），从而提升整个系统的性能。</p>
+<p>但是，换个角度思考，我们虽然能够通过静态更换底层实现实现部署到不同的数据库平台上，但是这样的方式在面对较大的系统时，部署和维护工作将会变得非常棘手。</p>
+<p>在面向对象设计中“可复用设计”中有一条原则，叫做“开闭原则”–对扩展开放，对修改关闭，说的通俗一点就是软件系统中包含的各种组件，例如模块、类以及功能等等，应该在不修改现有代码的基础上，引入新功能。我们应该把DAO模式中存在的变动因素屏蔽在系统之外。</p>
+<p>由此，在DAO层引入了工厂模式(Factory)、代理模式(Proxy)。</p>
+<h2 id="5-工厂模式和代理模式"><a href="#5-工厂模式和代理模式" class="headerlink" title="5.工厂模式和代理模式"></a>5.工厂模式和代理模式</h2><p>由于需要针对不同的数据库提供各自的DAO实现，很自然我们就联想到可以抽象出一个调用接口，通过调用接口作为调用界面和规范，从而避免对代码具体实现的依赖。</p>
+<h3 id="1-工厂模式"><a href="#1-工厂模式" class="headerlink" title="1.工厂模式"></a>1.工厂模式</h3><p>作为最常用的创建模式，工厂模式可以实现按需加载相应的实现提供给业务层。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">UserDao userDao = DAOFactory.getDAO(UserDao.class);</div><div class="line">User user = userDao.getUser(id);</div></pre></td></tr></table></figure></p>
+<p> 工厂模式UML图：</p>
+<p><img src="https://static.oschina.net/uploads/img/201707/12093739_Wrbu.png" alt="工厂模式UML图"></p>
+<p>以下简易实例中使用工厂模式实现DAO类的按需创建。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DAOFactory</span></span>&#123;</div><div class="line">true<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> UserDao <span class="title">getUserDAO</span><span class="params">()</span></span>&#123;</div><div class="line">truetrue<span class="keyword">return</span> <span class="keyword">new</span> UserDao();</div><div class="line">true&#125;</div><div class="line"></div><div class="line">true<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> xxxDao <span class="title">getxxxDAO</span><span class="params">()</span></span>&#123;</div><div class="line">truetrue<span class="keyword">return</span> <span class="keyword">new</span> xxxDao();</div><div class="line">true&#125;</div><div class="line">true<span class="comment">//...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>业务代码就变成了这样<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> Class UserService&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">login</span><span class="params">(String username, String password)</span></span>&#123;</div><div class="line">        User user = DAOFactory.getUserDAO().login(username,password);</div><div class="line">        <span class="keyword">return</span> user;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>看起来不错，但是每次都要通过DAOFactory的方法创建DAO类，导致整段代码中充斥着重复的部分，有没有办法解决它呢？</p>
+<h3 id="2-代理模式"><a href="#2-代理模式" class="headerlink" title="2.代理模式"></a>2.代理模式</h3><p>代理模式的引入正好解决了以上出现的问题。怎么回事呢？让我们先来了解一下代理模式是什么。</p>
+<p>代理模式的UML图</p>
+<p><img src="https://static.oschina.net/uploads/img/201707/12093828_KYvQ.png" alt="代理模式UML图"></p>
+<p>一句话概括，代理模式就是在你和目标对象中间设置一个代理，你只需要告诉代理你现在需要登录，代理就会自动帮你把新建对象，操作对象等等全部搞定了。</p>
+<p>让我们看看经过代理模式改造之后的代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserProxy</span></span>&#123;</div><div class="line">true<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> User <span class="title">login</span><span class="params">(String username, String password)</span></span>&#123;</div><div class="line">truetrueUser user = DAOFactory.getUserDAO().login(username,password);</div><div class="line">truetrue<span class="keyword">return</span> user;</div><div class="line">true&#125;</div><div class="line">true<span class="comment">//...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>于是业务代码就变得非常简洁，看起来比最开始的业务层代码好多了。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> Class UserService&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">login</span><span class="params">(String username, String password)</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> UserProxy.login(username,password);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>到现在，我们已经差不多解决了持久层的解耦合问题了，那么持久层的设计思想是不是到此就结束了呢？我们是不是已经找到了适应所有web应用的模式呢？</p>
+<p>不是的。<br>无论什么应用，都无法脱离对资源的管理和使用，对于持久层而言，资源的调度和管理就显得尤为重要。<br>由于对数据库的操作过程中存在许多消耗资源的“重量级”操作，所以优化持久层的资源管理调度也是持久层设计理念发展过程中希望达到的目标。可见一个好的设计能够提升性能，提升系统的伸缩性、可维护性。</p>
+<p>那么我们要怎么优化持久层呢？ORM(Object/Relational Mapper)思想乃至持久层框架的出现是为了解决什么问题呢？Hibernate、Apache OJB、iBatis是如何对持久层进行处理的呢？我们能不能一劳永逸地解决持久层存在的问题呢？</p>
+<p>敬请期待下一篇博文，带你探秘持久层的设计理念。</p>
+<p>感谢您的阅读！如果对您有一点点帮助的话，那将是我莫大的荣幸！</p>
+<h1 id="相关学习资源"><a href="#相关学习资源" class="headerlink" title="相关学习资源"></a>相关学习资源</h1><p> XML：</p>
+<p>1.<a href="http://www.runoob.com/xml/xml-tutorial.html" target="_blank" rel="external">菜鸟教程-XML教程</a></p>
+<p>2.<a href="http://www.imooc.com/learn/171" target="_blank" rel="external">慕课网-Java眼中的XML-文件读取</a></p>
+<p>设计模式：</p>
+<p>1.<a href="http://blog.csdn.net/eson_15/article/details/51223124" target="_blank" rel="external">java设计模式-工厂模式</a></p>
+<p>2.<a href="https://zh.wikipedia.org/wiki/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F" target="_blank" rel="external">维基百科-代理模式</a></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="http://m8.music.126.net/20170829211426/b6f8d4ef47a323f21cbbbd46d64a8127/ymusic/4348/1be3/74df/bbd85d3df66d651cfee6239def42cea4.mp3">
+            </audio>
+        </div>
+        
+<div class="comment link" data-id="2017/07/12/持久层设计理念的演变/" data-title="持久层设计理念的演变" data-url="https://soarkey.github.io/2017/07/12/持久层设计理念的演变/" data-shortname="soarkey">查看评论</div>
+
+
+    </div>
+</div>
+
+    </div>
+</div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+
+</html>
