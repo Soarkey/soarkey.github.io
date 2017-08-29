@@ -538,7 +538,7 @@ $$\lambda(k)=\frac{x^{(0)}(k-1)}{x^{(0)}(k)},k=2,3,...,n$$
     <link href="https://soarkey.github.io/2017/02/27/%E5%88%A9%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
     <id>https://soarkey.github.io/2017/02/27/利用hexo搭建博客/</id>
     <published>2017-02-27T00:00:00.000Z</published>
-    <updated>2017-08-19T16:05:43.436Z</updated>
+    <updated>2017-08-29T12:50:26.105Z</updated>
     
     <content type="html"><![CDATA[<p>经过多天的学习与尝试，踩过不少坑，终于是把博客搭建成功了，下面我把我的博客搭建过程分享出来，希望能对你起到一定的帮助！</p>
 <a id="more"></a>
