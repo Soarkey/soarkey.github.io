@@ -21,9 +21,9 @@ body {
   min-height: 100%;
   background: #fff;
   color: #4c4948;
-  font-size: 18px;
+  font-size: 20px;
   font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
-  line-height: 2;
+  line-height: 1.5;
 }
 *::-webkit-scrollbar {
   width: 8px;
@@ -173,7 +173,7 @@ table td {
   padding-top: 1.4rem;
   background: #263238;
   color: #eff;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 24px;
 }
 figure.highlight {
@@ -194,7 +194,7 @@ blockquote {
   background: rgba(27,31,35,0.05);
   color: #1f2d3d;
   word-wrap: break-word;
-  font-size: 18px;
+  font-size: 20px;
 }
 .article-container pre code {
   padding: 0;
@@ -585,7 +585,7 @@ footer.is-mobile {
   padding: 10px 36px;
   width: 100%;
   border: none;
-  font-size: 18px;
+  font-size: 20px;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -916,7 +916,7 @@ footer.is-mobile {
   margin-left: 5rem;
   color: #4c4948;
   text-decoration: none;
-  font-size: 0.8rem;
+  font-size: 1rem;
   cursor: pointer;
 }
 .category-lists {
@@ -1523,7 +1523,7 @@ img:hover {
 }
 @media screen and (min-width: 1300px) {
   .layout {
-    width: 900px;
+    width: 95%;
   }
   .recent-post-item .content iframe {
     width: 900px;
