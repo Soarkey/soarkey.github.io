@@ -21,7 +21,7 @@ body {
   min-height: 100%;
   background: #fff;
   color: #4c4948;
-  font-size: 20px;
+  font-size: 18px;
   font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
   line-height: 1.5;
 }
@@ -173,7 +173,7 @@ table td {
   padding-top: 1.4rem;
   background: #263238;
   color: #eff;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 24px;
 }
 figure.highlight {
@@ -194,7 +194,7 @@ blockquote {
   background: rgba(27,31,35,0.05);
   color: #1f2d3d;
   word-wrap: break-word;
-  font-size: 20px;
+  font-size: 18px;
 }
 .article-container pre code {
   padding: 0;
@@ -585,7 +585,8 @@ footer.is-mobile {
   padding: 10px 36px;
   width: 100%;
   border: none;
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 600;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -678,8 +679,9 @@ footer.is-mobile {
 }
 #page-header #site-name {
   text-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,0.15);
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
+  font-size: 20px;
 }
 @media screen and (min-width: 768px) {
   #site-title {
@@ -1203,7 +1205,7 @@ footer.is-mobile {
   background: #fff;
   color: #49b1f5;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 1em;
   cursor: pointer;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -1802,7 +1804,7 @@ img:hover {
   outline: none;
   border: 2px solid #49b1f5;
   border-radius: 2rem;
-  font-size: 14px;
+  font-size: 1em;
 }
 #local-search .local-search__hit-item {
   position: relative;
@@ -1832,14 +1834,14 @@ img:hover {
   display: block;
   color: #4c4948;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 1.2em;
   cursor: pointer;
 }
 #local-search .local-search__hit-item a:hover {
   color: #49b1f5;
 }
 #local-search .local-search-stats__hr {
-  display: none;
+  display: none !important;
 }
 #local-search .search-result-list {
   overflow-y: auto;
